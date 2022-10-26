@@ -1,24 +1,25 @@
 # vueclass
 
-## Project setup
-```
-npm install
-```
+## CLI 설치하기
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+npm install -g @vue/cli
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## VUE 설치하기
 
-### Lints and fixes files
-```
-npm run lint
-```
+vue create vueclass
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## firebase CLI설치
+
+npm install -g firebase-tools
+
+## firebase 로그인
+
+firebase login
+
+## firebase 초기화
+
+firebase init
+
+# 배포하기
+
+https://vueclass99.web.app
