@@ -23,4 +23,8 @@ firebase init
 # 배포하기
 
 https://vueclass99.web.app
-"# vueclass" 
+"# vueclass"
+
+## 저장하기
+
+firebase deploy
