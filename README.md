@@ -22,9 +22,12 @@ firebase init
 
 # 배포하기
 
+### 1완성 : 컴퍼넌트 사용, props 사용, swiper 사용
+
 https://vueclass99.web.app
 "# vueclass"
 
 ## 저장하기
 
+npm run build
 firebase deploy
