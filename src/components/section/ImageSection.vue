@@ -1,24 +1,23 @@
 <template>
-  <section id="imageType" class="image__wrap" :class="attr">
-    <h2>우주🚀</h2>
-    <p>우주는 더이상 갈 수 없는 영역이 아닙니다. 저희가 도와드리겠습니다.</p>
+  <section
+    id="imageType"
+    class="image__wrap"
+    :class="attr"
+    v-for="header in header"
+    :key="header"
+  >
+    <h2>{{ header.header }}</h2>
+    <p>{{ header.subtitle }}</p>
     <div class="image__inner" :class="layout">
-      <article class="image img1">
-        <h3 class="image__title">달 프로젝트</h3>
-        <p class="image__desc">
-          달에서 진행하는 사업에 대한 이야기를 나눠보도록 하겠습니다. 달은
-          지금도 개발하고 있습니다 저희도 시대보다 앞서 가기위해서...
-        </p>
-        <a href="#">자세히보기</a>
-      </article>
-      <article class="image img2">
-        <h3 class="image__title">은하 프로젝트</h3>
-        <p class="image__desc">
-          우리 은하계가 얼마나 많은 자원을 가지고 있는지 알고 있으십니까?
-          은하계는 엄청난 가치를 지니고 있고 탐사를 위해 여러분에 도움이
-          필요합니다.
-        </p>
-        <a href="#">자세히보기</a>
+      <article
+        class="image"
+        :class="title.class"
+        v-for="title in title"
+        :key="title"
+      >
+        <h3 class="image__title">{{ title.text }}</h3>
+        <p class="image__desc">{{ title.desc }}</p>
+        <a href="#">{{ title.detail }}</a>
       </article>
     </div>
   </section>
@@ -29,6 +28,31 @@ export default {
   props: {
     attr: String,
     layout: String,
+  },
+  data() {
+    return {
+      header: [
+        {
+          header: "우주🚀",
+          subtitle:
+            "우주는 더이상 갈 수 없는 영역이 아닙니다. 저희가 도와드리겠습니다.",
+        },
+      ],
+      title: [
+        {
+          text: "달 프로젝트",
+          desc: "달에서 진행하는 사업에 대한 이야기를 나눠보도록 하겠습니다. 달은 지금도 개발하고 있습니다 저희도 시대보다 앞서 가기위해서...",
+          class: "img1",
+          detail: "자세히보기",
+        },
+        {
+          text: "은하 프로젝트",
+          desc: "  우리 은하계가 얼마나 많은 자원을 가지고 있는지 알고 있으십니까? 은하계는 엄청난 가치를 지니고 있고 탐사를 위해 여러분에 도움이 필요합니다.",
+          class: "img2",
+          detail: "자세히보기",
+        },
+      ],
+    };
   },
 };
 </script>

@@ -2,12 +2,10 @@
   <section id="bannerType" class="banner__wrap" :class="attr">
     <h2 class="blind">배너 영역</h2>
     <div class="banner__inner">
-      <h3 class="title">우주</h3>
+      <h3 class="title">{{ banner[0].title }}</h3>
       <p class="desc">
-        미지의 탐사를 원하시는 분은
-        <a href="/" title="페이지 이동">
-          많은 질문 부탁드리고 이곳을 클릭해주세요.</a
-        >
+        {{ banner[0].desc }}
+        <a href="/" title="페이지 이동"> {{ banner[0].desc2 }}</a>
       </p>
       <span class="small blind">배너유형01</span>
     </div>
@@ -19,6 +17,13 @@ export default {
   props: {
     attr: String,
   },
+  banner: [
+    {
+      title: "우주",
+      desc: "미지의 탐사를 원하시는 분은",
+      desc2: "많은 질문 부탁드리고 이곳을 클릭해주세요.",
+    },
+  ],
 };
 </script>
 

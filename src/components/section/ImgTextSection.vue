@@ -2,24 +2,40 @@
   <section id="imgtextType" class="imgText__wrap" :class="attr">
     <h2 class="blind">유용한 사이트 살펴보기</h2>
     <div class="imgText__inner" :class="layout">
-      <div class="imgText__txt">
-        <span>우주에 관한 사이트</span>
-        <h3>Space reference</h3>
-        <p>우주산업에 투자해보세요!</p>
+      <div
+        class="imgText__txt"
+        v-for="imgtextType in imgtextType"
+        :key="imgtextType"
+      >
+        <span>{{ imgtextType.title }}</span>
+        <h3>{{ imgtextType.title2 }}</h3>
+        <p>{{ imgtextType.desc }}</p>
         <ul>
-          <li><a href="/">튜토리얼 사이트</a></li>
-          <li><a href="/">레퍼런스 사이트</a></li>
-          <li><a href="/">space 사이트</a></li>
-          <li><a href="/">twitter 사이트</a></li>
-          <li><a href="/">spaceX 사이트</a></li>
-          <li><a href="/">Youtube사이트</a></li>
+          <li>
+            <a href="/">{{ imgtextType.list }}</a>
+          </li>
+          <li>
+            <a href="/">{{ imgtextType.list2 }}</a>
+          </li>
+          <li>
+            <a href="/">{{ imgtextType.list3 }}</a>
+          </li>
+          <li>
+            <a href="/">{{ imgtextType.list4 }}</a>
+          </li>
+          <li>
+            <a href="/">{{ imgtextType.list5 }}</a>
+          </li>
+          <li>
+            <a href="/">{{ imgtextType.list6 }}</a>
+          </li>
         </ul>
       </div>
-      <div class="imgText__img img1">
-        <a href="/">레퍼런스 사이트</a>
+      <div class="imgText__img" :class="imgarticle[0].image">
+        <a href="/">{{ imgarticle[0].desc }}</a>
       </div>
-      <div class="imgText__img img2">
-        <a href="/" class="blue">튜토리얼 사이트</a>
+      <div class="imgText__img" :class="imgarticle[1].image">
+        <a href="/" class="blue">{{ imgarticle[1].desc }}</a>
       </div>
     </div>
   </section>
@@ -30,6 +46,33 @@ export default {
   props: {
     attr: String,
     layout: String,
+  },
+  data() {
+    return {
+      imgtextType: [
+        {
+          title: "우주에 관한 사이트",
+          title2: "Space reference",
+          desc: "우주산업에 투자해보세요!",
+          list: "튜토리얼 사이트",
+          list2: "레퍼런스 사이트",
+          list3: "space 사이트",
+          list4: "twitter 사이트",
+          list5: "spaceX 사이트",
+          list6: "Youtube사이트",
+        },
+      ],
+      imgarticle: [
+        {
+          image: "img1",
+          desc: "레퍼런스 사이트",
+        },
+        {
+          image: "img2",
+          desc: "튜토리얼 사이트",
+        },
+      ],
+    };
   },
 };
 </script>

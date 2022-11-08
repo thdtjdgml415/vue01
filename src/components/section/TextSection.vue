@@ -1,45 +1,19 @@
 <template>
   <section id="textType" class="text__wrap" :class="attr">
     <span class="blind">텍스트 유형01</span>
-    <h2>도움을 주신 모든 분들</h2>
+    <h2>{{ Texttitle[0].textTitle }}</h2>
     <div class="text__inner" :class="layout">
-      <div class="text t1">
-        <h3 class="text__title">space</h3>
+      <div
+        class="text"
+        :class="TextType.class"
+        v-for="TextType in TextType"
+        :key="TextType"
+      >
+        <h3 class="text__title">{{ TextType.title }}</h3>
         <p class="text__desc">
-          작년에 다양한 컨텐츠를 만들었던 Space 기업입니다.
+          {{ TextType.desc }}
         </p>
-        <a class="text_btn" href="/">더보기</a>
-      </div>
-      <div class="text t2">
-        <h3 class="text__title">Tesla</h3>
-        <p class="text__desc">
-          전기차로 세계에서 손꼽히는 기업으로 거대규모의 기업입니다.
-        </p>
-        <a class="text_btn" href="/">더보기</a>
-      </div>
-      <div class="text t3">
-        <h3 class="text__title">MS</h3>
-        <p class="text__desc">
-          마이크로소프트는 소프트웨어에서 독보적인 기업입니다.
-        </p>
-        <a class="text_btn" href="/">더보기</a>
-      </div>
-      <div class="text t4">
-        <h3 class="text__title">Samsung</h3>
-        <p class="text__desc">
-          대한민국의 최대 기업인 삼성에서도 저희에게 투자를 해주고 있습니다.
-        </p>
-        <a class="text_btn" href="/">더보기</a>
-      </div>
-      <div class="text t5">
-        <h3 class="text__title">Meta</h3>
-        <p class="text__desc">얼마전에 이름을 facebook에서 바꾼 메타입니다.</p>
-        <a class="text_btn" href="/">더보기</a>
-      </div>
-      <div class="text t6">
-        <h3 class="text__title">apple</h3>
-        <p class="text__desc">애플에서도 저희에게 투자하고 있습니다.</p>
-        <a class="text_btn" href="/">더보기</a>
+        <a class="text_btn" href="/">{{ TextType.detail }}</a>
       </div>
     </div>
   </section>
@@ -50,6 +24,52 @@ export default {
   props: {
     attr: String,
     layout: String,
+  },
+  data() {
+    return {
+      TextType: [
+        {
+          class: "t1",
+          title: "space",
+          desc: "작년에 다양한 컨텐츠를 만들었던 Space 기업입니다.",
+          detail: "더보기",
+        },
+        {
+          class: "t2",
+          title: "Tesla",
+          desc: "전기차로 세계에서 손꼽히는 기업으로 거대규모의 기업입니다.",
+          detail: "더보기",
+        },
+        {
+          class: "t3",
+          title: "MS",
+          desc: "마이크로소프트는 소프트웨어에서 독보적인 기업입니다.",
+          detail: "더보기",
+        },
+        {
+          class: "t4",
+          title: "Samsung",
+          desc: "대한민국의 최대 기업인 삼성에서도 저희에게 투자를 해주고 있습니다.",
+          detail: "더보기",
+        },
+        {
+          class: "t5",
+          title: "Meta",
+          desc: "얼마전에 이름을 facebook에서 바꾼 메타입니다.",
+        },
+        {
+          class: "t6",
+          title: "apple",
+          desc: "애플에서도 저희에게 투자하고 있습니다.",
+          detail: "더보기",
+        },
+      ],
+      Texttitle: [
+        {
+          textTitle: "도움을 주신 모든 분들",
+        },
+      ],
+    };
   },
 };
 </script>
